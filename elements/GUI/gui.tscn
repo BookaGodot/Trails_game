@@ -1,0 +1,117 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxn7bi0xs1kwj"]
+
+[ext_resource type="Script" uid="uid://ntrivepckrki" path="res://elements/GUI/gui.gd" id="1_b7ps2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ajsdn"]
+bg_color = Color(0.52549, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b7ps2"]
+bg_color = Color(0.457436, 0.672559, 0.288779, 1)
+shadow_color = Color(0.580378, 0.349839, 0.351591, 0.6)
+
+[node name="GUI" type="CanvasLayer"]
+layer = 5
+script = ExtResource("1_b7ps2")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 35
+theme_override_constants/margin_top = 35
+theme_override_constants/margin_right = 35
+theme_override_constants/margin_bottom = 35
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Happy_container" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/Happy_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 45
+text = "Happy"
+vertical_alignment = 1
+
+[node name="happy_bar" type="ProgressBar" parent="MarginContainer/VBoxContainer/VBoxContainer/Happy_container"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ajsdn")
+theme_override_styles/fill = SubResource("StyleBoxFlat_b7ps2")
+value = 70.0
+show_percentage = false
+
+[node name="Hunger_container" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/Hunger_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 45
+text = "Hunger"
+
+[node name="hunger_Bar" type="ProgressBar" parent="MarginContainer/VBoxContainer/VBoxContainer/Hunger_container"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ajsdn")
+theme_override_styles/fill = SubResource("StyleBoxFlat_b7ps2")
+value = 70.0
+show_percentage = false
+
+[node name="Sleep_container" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/Sleep_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 45
+text = "Sleep"
+
+[node name="sleep_bar" type="ProgressBar" parent="MarginContainer/VBoxContainer/VBoxContainer/Sleep_container"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ajsdn")
+theme_override_styles/fill = SubResource("StyleBoxFlat_b7ps2")
+value = 70.0
+show_percentage = false
+
+[node name="Clean_container" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/Clean_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 45
+text = "Clean"
+
+[node name="clean_bar" type="ProgressBar" parent="MarginContainer/VBoxContainer/VBoxContainer/Clean_container"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ajsdn")
+theme_override_styles/fill = SubResource("StyleBoxFlat_b7ps2")
+value = 70.0
+show_percentage = false

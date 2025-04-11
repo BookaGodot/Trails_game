@@ -11,15 +11,21 @@ config_version=5
 [application]
 
 config/name="Trails Game"
+run/main_scene="uid://d1vaqatx34i68"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Events="*res://Core/events.gd"
+Globals="*res://Core/globals.gd"
+
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
-window/size/window_width_override=1280
-window/size/window_height_override=720
+window/size/viewport_width=720
+window/size/viewport_height=1280
+window/size/window_width_override=720
+window/size/window_height_override=1280
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

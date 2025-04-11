@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1vaqatx34i68"]
+
+[ext_resource type="PackedScene" uid="uid://bxn7bi0xs1kwj" path="res://elements/GUI/gui.tscn" id="1_m7npr"]
+
+[node name="test" type="Node2D"]
+
+[node name="character" type="Node2D" parent="."]
+position = Vector2(315, 726)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="character"]
+
+[node name="ColorRect" type="ColorRect" parent="character/Sprite2D"]
+custom_minimum_size = Vector2(100, 100)
+offset_left = -99.0
+offset_top = -200.0
+offset_right = 192.0
+offset_bottom = 267.0
+color = Color(0.233192, 0.428069, 0.750539, 1)
+metadata/_edit_lock_ = true
+
+[node name="GUI" parent="." instance=ExtResource("1_m7npr")]
