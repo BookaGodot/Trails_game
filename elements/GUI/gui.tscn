@@ -3,12 +3,10 @@
 [ext_resource type="Script" uid="uid://ntrivepckrki" path="res://elements/GUI/gui.gd" id="1_b7ps2"]
 [ext_resource type="Texture2D" uid="uid://prqq8q0au3u5" path="res://icon.svg" id="2_fjjel"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ajsdn"]
-bg_color = Color(0.52549, 0, 0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fjjel"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b7ps2"]
-bg_color = Color(0.457436, 0.672559, 0.288779, 1)
-shadow_color = Color(0.580378, 0.349839, 0.351591, 0.6)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hcep6"]
+bg_color = Color(0.360764, 0.688041, 0.370174, 1)
 
 [node name="GUI" type="CanvasLayer"]
 layer = 5
@@ -28,98 +26,32 @@ theme_override_constants/margin_bottom = 35
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 6
 
-[node name="Happy_container" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/Happy_container"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 45
-text = "Happy"
-vertical_alignment = 1
-
-[node name="happy_bar" type="ProgressBar" parent="MarginContainer/VBoxContainer/VBoxContainer/Happy_container"]
+[node name="HealthBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(400, 30)
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-size_flags_stretch_ratio = 2.0
-theme_override_styles/background = SubResource("StyleBoxFlat_ajsdn")
-theme_override_styles/fill = SubResource("StyleBoxFlat_b7ps2")
-value = 70.0
-show_percentage = false
+theme_override_styles/background = SubResource("StyleBoxFlat_fjjel")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hcep6")
+max_value = 10.0
+value = 5.0
 
-[node name="Hunger_container" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/Hunger_container"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 45
-text = "Hunger"
-
-[node name="hunger_Bar" type="ProgressBar" parent="MarginContainer/VBoxContainer/VBoxContainer/Hunger_container"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(400, 30)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-size_flags_stretch_ratio = 2.0
-theme_override_styles/background = SubResource("StyleBoxFlat_ajsdn")
-theme_override_styles/fill = SubResource("StyleBoxFlat_b7ps2")
-value = 70.0
-show_percentage = false
-
-[node name="Sleep_container" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/Sleep_container"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 45
-text = "Sleep"
-
-[node name="sleep_bar" type="ProgressBar" parent="MarginContainer/VBoxContainer/VBoxContainer/Sleep_container"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(400, 30)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-size_flags_stretch_ratio = 2.0
-theme_override_styles/background = SubResource("StyleBoxFlat_ajsdn")
-theme_override_styles/fill = SubResource("StyleBoxFlat_b7ps2")
-value = 70.0
-show_percentage = false
-
-[node name="Clean_container" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/Clean_container"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 45
-text = "Clean"
-
-[node name="clean_bar" type="ProgressBar" parent="MarginContainer/VBoxContainer/VBoxContainer/Clean_container"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(400, 30)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-size_flags_stretch_ratio = 2.0
-theme_override_styles/background = SubResource("StyleBoxFlat_ajsdn")
-theme_override_styles/fill = SubResource("StyleBoxFlat_b7ps2")
-value = 70.0
-show_percentage = false
+size_flags_horizontal = 4
+size_flags_vertical = 10
+texture = ExtResource("2_fjjel")
+stretch_mode = 5
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 10
+size_flags_vertical = 8
 theme_override_constants/separation = 45
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]

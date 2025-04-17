@@ -1,3 +1,6 @@
 extends Node
 
-signal progressbar_changed 
+signal hunger_changed 
+signal happy_changed 
+signal clean_changed 
+signal health_changed 
