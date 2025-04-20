@@ -10,15 +10,16 @@ config_version=5
 
 [application]
 
-config/name="Trails Game"
+config/name="SoulPet"
 run/main_scene="uid://d1vaqatx34i68"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Events="*res://Core/events.gd"
-Globals="*res://Core/globals.gd"
+Events="*res://autoload/events.gd"
+Globals="*res://autoload/globals.gd"
+SaveData="*res://autoload/save_data/save_data.tscn"
 
 [display]
 
