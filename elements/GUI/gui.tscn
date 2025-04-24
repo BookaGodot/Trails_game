@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxn7bi0xs1kwj"]
+[gd_scene load_steps=6 format=3 uid="uid://bxn7bi0xs1kwj"]
 
 [ext_resource type="Script" uid="uid://ntrivepckrki" path="res://elements/GUI/gui.gd" id="1_b7ps2"]
 [ext_resource type="Texture2D" uid="uid://prqq8q0au3u5" path="res://icon.svg" id="2_fjjel"]
+[ext_resource type="PackedScene" uid="uid://by0bh4cw06vy4" path="res://elements/pet/pet.tscn" id="2_hcep6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fjjel"]
 
@@ -42,12 +43,9 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_hcep6")
 max_value = 10.0
 value = 5.0
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Pet" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_hcep6")]
+unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 10
-texture = ExtResource("2_fjjel")
-stretch_mode = 5
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
