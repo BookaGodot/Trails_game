@@ -19,7 +19,8 @@ config/icon="res://icon.svg"
 
 Events="*res://autoload/events.gd"
 Globals="*res://autoload/globals.gd"
-SaveData="*res://autoload/save_data/save_data.tscn"
+SaveSystem="*res://addons/save_system/save_system.gd"
+ConfigData="*res://autoload/config_data.gd"
 
 [display]
 
@@ -29,6 +30,10 @@ window/size/window_width_override=720
 window/size/window_height_override=1280
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/save_system/plugin.cfg")
 
 [rendering]
 

@@ -9,19 +9,19 @@ var cleanliness : float = 3
 
 func change_care(amount : float) -> void:
 	care += amount
-	Events.care_changed.emit()
+	Events.care_changed.emit(care)
 
 
 func change_happy(amount : float) -> void:
 	happiness += amount
-	Events.happiness_changed.emit()
+	Events.happiness_changed.emit(happiness)
 
 
 func change_hunger(amount) -> void:
 	hunger += amount
-	Events.hunger_changed.emit()
+	Events.hunger_changed.emit(hunger)
 
 
 func change_clean(amount) -> void:
 	cleanliness += amount
-	Events.cleanliness_changed.emit()
+	Events.cleanliness_changed.emit(cleanliness)

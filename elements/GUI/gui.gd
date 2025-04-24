@@ -1,10 +1,13 @@
 extends CanvasLayer
 
-@onready var health_bar: ProgressBar = %HealthBar
+@onready var care_bar: ProgressBar = %HealthBar
+@onready var pet: Pet = %Pet
+
 
 func _ready() -> void:
-	Events.health_changed.connect(update_health)
-	
-	
-func update_health():
-	health_bar.value = Globals.health
+	care_bar.value = pet.state.care
+	Events.care_changed.connect(update_care)
+
+
+func update_care(value : float):
+	care_bar.value = value

@@ -1,20 +1,6 @@
 extends Node
 
-const save_file_path = "user://save_data.save"
 const config_file_path = "user://user_config.cfg"
-
-@warning_ignore("unused_signal")
-signal money_updated(type : String, amount : float)
-
-var save_data: Dictionary = {}
-var default_save_data: Dictionary = {
-	"shop_unlocks": [],
-	
-	"resources": {
-		"common_money": 20,
-		"rare_money": 0,
-	},
-}
 
 var temp_config_data: Dictionary = {}
 var config_data: Dictionary = {}
@@ -39,10 +25,9 @@ var default_config_data: Dictionary = {
 	}
 }
 
+
 func _ready():
 	load_config_file()
-	load_save_file()
-	
 	apply_settings()
 
 
@@ -71,37 +56,12 @@ func save_config_file():
 	for category in config_data.keys():
 		for key in config_data[category].keys():
 			config.set_value(category, key, config_data[category][key])
-
+	
 	var error = config.save(config_file_path)
 	if error != OK:
 		print("Failed to save config file!")
 	else:
 		print("Config saved!")
-
-
-func load_save_file():
-	if !FileAccess.file_exists(save_file_path):
-		print("Save file does not exist. Using defaults.")
-		save_data = default_save_data.duplicate(true)
-		return
-
-	var file = FileAccess.open(save_file_path, FileAccess.READ)
-	var loaded_data = file.get_var()
-	save_data = merge_defaults(loaded_data, default_save_data)
-
-
-func save_game_data():
-	print("Saving game data...")
-	var file = FileAccess.open(save_file_path, FileAccess.WRITE)
-	file.store_var(save_data)
-
-
-func delete_save_data():
-	var default = default_save_data.duplicate(true)
-	save_data = default
-	print("Deleting save data")
-	save_game_data()
-	get_tree().change_scene_to_file("res://scene/ui/main_menu/main_menu.tscn")
 
 
 func merge_defaults(original: Dictionary, defaults: Dictionary) -> Dictionary:

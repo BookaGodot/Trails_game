@@ -40,8 +40,9 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_fjjel")
 theme_override_styles/fill = SubResource("StyleBoxFlat_hcep6")
-max_value = 10.0
-value = 5.0
+max_value = 7.0
+step = 1.0
+value = 4.0
 
 [node name="Pet" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_hcep6")]
 unique_name_in_owner = true
