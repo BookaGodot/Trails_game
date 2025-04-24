@@ -17,10 +17,10 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Events="*res://autoload/events.gd"
-Globals="*res://autoload/globals.gd"
 SaveSystem="*res://addons/save_system/save_system.gd"
 ConfigData="*res://autoload/config_data.gd"
+Events="*res://autoload/events.gd"
+Globals="*res://autoload/globals.gd"
 
 [display]
 
