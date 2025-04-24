@@ -33,3 +33,13 @@ stretch_mode = 5
 [node name="State" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("3_iukgt")
+
+[node name="AutosaveTimer" type="Timer" parent="State"]
+process_mode = 3
+wait_time = 5.0
+autostart = true
+
+[node name="StateDecayTimer" type="Timer" parent="State"]
+autostart = true
+
+[connection signal="timeout" from="State/AutosaveTimer" to="State" method="save"]
