@@ -13,6 +13,7 @@ size_flags_vertical = 3
 script = ExtResource("1_w8ihv")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(128, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -30,6 +31,15 @@ size_flags_vertical = 10
 texture = ExtResource("1_hxib0")
 stretch_mode = 5
 
+[node name="Button" type="Button" parent="TextureRect"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="State" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("3_iukgt")
@@ -42,4 +52,5 @@ autostart = true
 [node name="StateDecayTimer" type="Timer" parent="State"]
 autostart = true
 
+[connection signal="pressed" from="TextureRect/Button" to="." method="_on_click"]
 [connection signal="timeout" from="State/AutosaveTimer" to="State" method="save"]
