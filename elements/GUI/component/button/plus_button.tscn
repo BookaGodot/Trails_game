@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbf13fblc3xkg"]
+
+[ext_resource type="PackedScene" uid="uid://1to6jbk2xbv3" path="res://elements/GUI/component/audio_component/audio_component.tscn" id="1_c28nj"]
+[ext_resource type="Script" uid="uid://spna2yawlsmk" path="res://elements/GUI/component/button/plus_button.gd" id="1_ipl7n"]
+[ext_resource type="Texture2D" uid="uid://c4w36i4b8x4op" path="res://elements/GUI/textures/Add Icon.png" id="2_ipl7n"]
+
+[node name="plus_button" type="Button"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(128, 80)
+script = ExtResource("1_ipl7n")
+
+[node name="random_audio_component" parent="." instance=ExtResource("1_c28nj")]
+
+[node name="texture" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(144, 144)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -104.0
+offset_right = 72.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(72, 72)
+texture = ExtResource("2_ipl7n")
+expand_mode = 4

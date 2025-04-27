@@ -1,0 +1,97 @@
+,en,ru,kz
+LANGUAGE STUFF,,,
+ENGLISH,English,English,English
+RUSSIAN,Русский,Русский,Русский
+KAZAKH,Қазақша,Қазақша,Қазақша
+,,,
+GAME CONTENT,,,
+FEED,Feed,Кормить,Арна
+WASH,Wash,Стирать,Жуу
+SLEEP,Sleep,Спать,Ұйқы
+PLAY,Play,Играть,Ойнау
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+ALERTS,,,
+ALERT_NOT_ENOUGH_MONEY,Not enough currency,Недостаточно валюты,Валюта жеткіліксіз
+ALERT_SURE_CONFIRMATION,You sure?,Вы уверены?,Сен сенімдісің бе?
+ALERT_QUIT_CONFIRMATION,You want to exit right now?,Вы хотите выйти прямо сейчас?,Дәл қазір шыққыңыз келе ме?
+ALERT_RESET_CONFIRMATION,Do you want to reset this page to default settings?,Вы хотите сбросить настройки этой страницы по умолчанию?,Бұл бетті әдепкі параметрлерге қайтарғыңыз келе ме?
+ALERT_CHANGES_CONFIRMATION,Do you want to accept the changes?,Вы хотите принять изменения?,Өзгерістерді қабылдағыңыз келе ме?
+,,,
+TOOLTIPS,,,
+TOOLTIP_MAX_FPS,"Set a limit for maximum FPS. 
+«0» removes the limit.","Устанавливает лимит для максимального количества кадров в секунду.
+«0» убирает лимит.","Максималды FPS шегін орнатыңыз. 
+«0» шектеуді жояды."
+TOOLTIP_COMMON_CURRENCY,Gain this from filling your diary.,"Получите это, заполняя свой дневник.",Мұны күнделік толтыру арқылы алыңыз.
+TOOLTIP_RARE_CURRENCY,"Gain this from finding secrets 
+and achievements.","Получите это, находя секреты 
+и достижения.","Мұны құпияларды табу арқылы алыңыз 
+және жетістіктер."
+,,,
+BUTTON STUFF,,,
+DEFAULT,Default,По умолчанию,Әдепкі
+Default,Default,По умолчанию,Әдепкі
+START,Start,Начать,Бастау
+SHOP,Shop,Магазин,Дүкен
+OPTIONS,Options,Настройки,Параметрлер
+CREDITS,Credits,Титры,Несиелер
+QUIT,Quit,Выйти,Шығу
+ACCEPT,Accept,Принять,Қабылдау
+YES,Yes,Да,Иә
+NO,No,Нет,Жоқ
+GAME,Game,Игра,Ойын
+AUDIO,Audio,Аудио,Аудио
+VIDEO,Video,Видео,Бейне
+CONTROLS,Controls,Управление,Басқару элементтері
+LANGUAGE,Language,Язык,Тіл
+ACCESSIBILITY,Accessibility,Доступность,Қол жетімділік
+CLOSE,Close,Закрыть,Жабу
+CANCEL,Cancel,Отмена,Бас тарту
+RESET_SETTINGS,Reset Settings,Сбросить настройки,Параметрлерді қалпына келтіру
+LEAVE_SHOP,Leave Shop,Покинуть магазин,Дүкеннен шығыңыз
+PURCHASE,Purchase,Приобрести,Сатып алу
+COSTUMES,Costumes,Костюмы,Костюмдер
+UPGRADES,Upgrades,Улучшения,Жаңартулар
+ITEM_BOUGHT,Item Bought,Товар куплен,Сатып алынған зат
+,,,
+SHOW_FPS,Show FPS,Показать частоту кадров,FPS көрсету
+FPS,FPS,Кадры/с,FPS
+MAX_FPS,Limit framerate,Лимит кадров в секунду,Шектеу кадр жиілігі
+TEXT_LANGUAGE,Text Language,Язык текста,Мәтін тілі
+VOICE_LANGUAGE,Voice Language,Язык голоса,Дауыс тілі
+,,,
+MASTER_VOLUME,Master Volume,Общий уровень громкости,Негізгі көлем
+SFX_VOLUME,SFX Volume,Громкость звуковых эффектов,SFX көлемі
+MUSIC_VOLUME,Music Volume,Громкость музыки,Музыка көлемі
+AUDIO_OUTPUT_DEVICE,Audio Output Device,Устройство вывода звука,Дыбыс шығару құрылғысы
+MUTE_UNFOCUSED,Mute audio when screen is minimized,Заглушать игру при свёрнутом экране,Экран кішірейген кезде дыбысты өшіріңіз
+,,,
+VSYNC_MODE,V-Sync,Вертикальная синхронизация,V-синхрондау
+DISABLED,Disabled,Отключено,Өшірілген
+ENABLED,Enabled,Включено,Қосылған
+ADAPTIVE,Adaptive,Адаптивная,Бейімделу
+SCREEN_MODE,Screen Mode,Режим экрана,Экран режимі
+WINDOW_RESOLUTION,Window Resolution,Разрешение окна,Терезе ажыратымдылығы
+WINDOWED,Windowed,Оконный,Терезелі
+FULLSCREEN,Fullscreen,Полноэкранный,Толық экран
+EXCLUSIVE_FULLSCREEN,Exclusive Fullscreen,Эксклюзивный полноэкранный,Эксклюзивті толық экран
+DISPLAY,Display,Экран,Дисплей
+DISPLAY_DEVICE,Display Device,Устройство отображения,Дисплей құрылғысы
+BRIGHTNESS,Brightness,Яркость,Жарықтық
+CONTRAST,Contrast,Контраст,Контраст
+,,,
+,,,
+CHROMATIC_ABBERATION,Chromatic Abberation,Хроматическая аберрация,Хроматикалық абберация
+COLOR_BLINDNESS_OPTIONS,Color Blindness Options,Настройки цветовой слепоты,Түс соқырлығы опциялары
+COLOR_BLINDNESS_INTENSITY,Color Blindness Intensity,Интенсивность цветовой слепоты,Түс соқырлығының қарқындылығы
+NORMAL_VISION,Normal Vision,Нормальное зрение,Қалыпты көру
+PROTANOPIA,Protanopia,Протанопия,Протанопия
+DEUTERANOPIA,Deuteranopia,Дейтеранопия,Дейтеранопия
+TRITANOPIA,Tritanopia,Тританопия,Тританопия

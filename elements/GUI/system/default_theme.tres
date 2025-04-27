@@ -1,0 +1,35 @@
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://bqc5t842iovlb"]
+
+[ext_resource type="Texture2D" uid="uid://2gg7587swfs1" path="res://elements/GUI/textures/button_base.png" id="1_niqew"]
+[ext_resource type="Texture2D" uid="uid://d4lmvagv1otdr" path="res://elements/GUI/textures/NavBarBorder.png" id="2_niqew"]
+[ext_resource type="Texture2D" uid="uid://cd6qoxgpdwe5m" path="res://elements/GUI/textures/Pressed Button.png" id="3_661fa"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_niqew"]
+texture = ExtResource("1_niqew")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_661fa"]
+texture = ExtResource("1_niqew")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pttgp"]
+texture = ExtResource("1_niqew")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_07eu8"]
+texture = ExtResource("1_niqew")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r3fqc"]
+texture = ExtResource("2_niqew")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ur8pn"]
+texture = ExtResource("2_niqew")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_77q4r"]
+texture = ExtResource("3_661fa")
+
+[resource]
+Button/styles/focus = SubResource("StyleBoxTexture_niqew")
+Button/styles/hover = SubResource("StyleBoxTexture_661fa")
+Button/styles/normal = SubResource("StyleBoxTexture_pttgp")
+Button/styles/pressed = SubResource("StyleBoxTexture_07eu8")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_r3fqc")
+ProgressBar/styles/background = SubResource("StyleBoxTexture_ur8pn")
+ProgressBar/styles/fill = SubResource("StyleBoxTexture_77q4r")

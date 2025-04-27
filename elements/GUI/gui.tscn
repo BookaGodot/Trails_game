@@ -1,17 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://bxn7bi0xs1kwj"]
+[gd_scene load_steps=14 format=3 uid="uid://bxn7bi0xs1kwj"]
 
 [ext_resource type="Script" uid="uid://ntrivepckrki" path="res://elements/GUI/gui.gd" id="1_b7ps2"]
-[ext_resource type="Texture2D" uid="uid://prqq8q0au3u5" path="res://icon.svg" id="2_fjjel"]
 [ext_resource type="PackedScene" uid="uid://by0bh4cw06vy4" path="res://elements/pet/pet.tscn" id="2_hcep6"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fjjel"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hcep6"]
-bg_color = Color(0.360764, 0.688041, 0.370174, 1)
+[ext_resource type="PackedScene" uid="uid://bve0vnmlpr3hw" path="res://elements/GUI/component/button/big_button.tscn" id="4_dja7h"]
+[ext_resource type="PackedScene" uid="uid://cnm32lcatpelo" path="res://elements/GUI/component/button/small_button.tscn" id="4_e1ebx"]
+[ext_resource type="Texture2D" uid="uid://xhhwfhq0jm02" path="res://scenes/map/backgrounds/Background1.png" id="4_woc13"]
+[ext_resource type="Texture2D" uid="uid://bjcpclj44swsa" path="res://elements/GUI/textures/Bath Icon.png" id="5_dja7h"]
+[ext_resource type="Texture2D" uid="uid://by0xq3xuw684x" path="res://elements/GUI/textures/Home Icon.png" id="5_g1ela"]
+[ext_resource type="Texture2D" uid="uid://ccfbn7w0t0gna" path="res://elements/GUI/textures/Sleep Icon.png" id="6_6ud22"]
+[ext_resource type="Texture2D" uid="uid://sfy48cqc70vn" path="res://elements/GUI/textures/Play Icon.png" id="6_8wje1"]
+[ext_resource type="Texture2D" uid="uid://bfcf2o7siwog2" path="res://elements/GUI/textures/Journal Icon.png" id="6_mqjsf"]
+[ext_resource type="PackedScene" uid="uid://bbf13fblc3xkg" path="res://elements/GUI/component/button/plus_button.tscn" id="7_mqjsf"]
+[ext_resource type="Texture2D" uid="uid://bmxxjucyxga5m" path="res://elements/GUI/textures/Shop Icon.png" id="7_nro1y"]
+[ext_resource type="Texture2D" uid="uid://cpgpur7tu8ejn" path="res://elements/GUI/textures/Inventory Icon.png" id="8_yswpu"]
 
 [node name="GUI" type="CanvasLayer"]
 layer = 5
 script = ExtResource("1_b7ps2")
+
+[node name="background" type="TextureRect" parent="."]
+offset_right = 2304.0
+offset_bottom = 4096.0
+scale = Vector2(0.3125, 0.3125)
+texture = ExtResource("4_woc13")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -38,8 +49,6 @@ layout_mode = 2
 [node name="HealthBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_fjjel")
-theme_override_styles/fill = SubResource("StyleBoxFlat_hcep6")
 max_value = 7.0
 step = 1.0
 value = 4.0
@@ -48,39 +57,74 @@ value = 4.0
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="control" type="Control" parent="MarginContainer"]
 layout_mode = 2
-size_flags_vertical = 8
-theme_override_constants/separation = 45
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(100, 100)
+[node name="button_hbox" type="HBoxContainer" parent="MarginContainer/control"]
 layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("2_fjjel")
-expand_mode = 2
-stretch_mode = 5
+offset_top = 893.0
+offset_right = 647.0
+offset_bottom = 1037.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 16
+alignment = 1
 
-[node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(100, 100)
+[node name="feed_button" parent="MarginContainer/control/button_hbox" instance=ExtResource("4_dja7h")]
+self_modulate = Color(0.964706, 0.564706, 0.262745, 1)
 layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("2_fjjel")
-expand_mode = 2
-stretch_mode = 5
+button_text = "FEED"
 
-[node name="TextureRect3" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(100, 100)
+[node name="wash_button" parent="MarginContainer/control/button_hbox" instance=ExtResource("4_dja7h")]
+self_modulate = Color(0.415686, 0.737255, 0.811765, 1)
 layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("2_fjjel")
-expand_mode = 2
-stretch_mode = 5
+button_text = "WASH"
+button_icon = ExtResource("5_dja7h")
 
-[node name="TextureRect4" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(100, 100)
+[node name="sleep_button" parent="MarginContainer/control/button_hbox" instance=ExtResource("4_dja7h")]
+self_modulate = Color(0.678431, 0.439216, 0.686275, 1)
 layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("2_fjjel")
-expand_mode = 2
-stretch_mode = 5
+button_text = "SLEEP"
+button_icon = ExtResource("6_6ud22")
+
+[node name="play_button" parent="MarginContainer/control/button_hbox" instance=ExtResource("4_dja7h")]
+self_modulate = Color(0.580392, 0.796078, 0.411765, 1)
+layout_mode = 2
+button_text = "PLAY"
+button_icon = ExtResource("6_8wje1")
+
+[node name="panel" type="PanelContainer" parent="MarginContainer/control"]
+layout_mode = 2
+offset_top = 1080.0
+offset_right = 656.0
+offset_bottom = 1208.0
+
+[node name="hbox" type="HBoxContainer" parent="MarginContainer/control/panel"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="home_button" parent="MarginContainer/control/panel/hbox" instance=ExtResource("4_e1ebx")]
+layout_mode = 2
+button_text = "HOME"
+button_icon = ExtResource("5_g1ela")
+
+[node name="journal_button" parent="MarginContainer/control/panel/hbox" instance=ExtResource("4_e1ebx")]
+layout_mode = 2
+button_text = "JOURNAL"
+button_icon = ExtResource("6_mqjsf")
+
+[node name="plus_button" parent="MarginContainer/control/panel/hbox" instance=ExtResource("7_mqjsf")]
+custom_minimum_size = Vector2(144, 80)
+layout_mode = 2
+
+[node name="shop_button" parent="MarginContainer/control/panel/hbox" instance=ExtResource("4_e1ebx")]
+layout_mode = 2
+button_text = "SHOP"
+button_icon = ExtResource("7_nro1y")
+
+[node name="inventory_button" parent="MarginContainer/control/panel/hbox" instance=ExtResource("4_e1ebx")]
+layout_mode = 2
+button_text = "INVENTORY"
+button_icon = ExtResource("8_yswpu")

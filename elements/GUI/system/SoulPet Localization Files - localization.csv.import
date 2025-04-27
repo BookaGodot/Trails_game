@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://36qfmuxw1fy6"
+
+[deps]
+
+files=["res://elements/GUI/system/SoulPet Localization Files - localization.en.translation", "res://elements/GUI/system/SoulPet Localization Files - localization.ru.translation", "res://elements/GUI/system/SoulPet Localization Files - localization.kz.translation"]
+
+source_file="res://elements/GUI/system/SoulPet Localization Files - localization.csv"
+dest_files=["res://elements/GUI/system/SoulPet Localization Files - localization.en.translation", "res://elements/GUI/system/SoulPet Localization Files - localization.ru.translation", "res://elements/GUI/system/SoulPet Localization Files - localization.kz.translation"]
+
+[params]
+
+compress=true
+delimiter=0
