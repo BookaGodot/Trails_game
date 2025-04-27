@@ -4,6 +4,7 @@ extends Control
 enum Temperaments { NEUTRAL, FUNNY, ANXIOUS, SHY, MELANCHOLY, STUBBORN }
 
 @onready var state: State = %State
+@onready var anim_player: AnimationPlayer = %anim_player
 
 var age : float = 0.0
 var temperament : Temperaments = Temperaments.NEUTRAL
@@ -20,20 +21,27 @@ func _input(event: InputEvent) -> void:
 
 
 func feed() -> void:
-	state.change_hunger(1.0)
-	# TODO: add animation
+	state.change_care(0.5)
+	
+	anim_player.play("play")
 
 
 func clean() -> void:
-	state.change_cleanliness(1.0)
-	# TODO: add animation
+	state.change_care(0.5)
+	
+	anim_player.play("wash")
 
 
 func make_happy() -> void:
-	state.change_happiness(1.0)
-	# TODO: add animation
+	state.change_care(0.5)
+	anim_player.play("play")
+
+
+func sleep() -> void:
+	state.change_care(0.5)
+	anim_player.play("sleep")
 
 
 func _on_click() -> void:
-	print("Pet clicked")
-	# TODO: add animation
+	anim_player.stop()
+	anim_player.play("touch")

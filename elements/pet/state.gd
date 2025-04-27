@@ -66,3 +66,4 @@ func _decay_states(time : float) -> void:
 	change_happiness(-decay)
 	change_hunger(-decay)
 	change_cleanliness(-decay)
+	change_care(-decay)

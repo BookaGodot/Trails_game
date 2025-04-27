@@ -6,15 +6,14 @@ KAZAKH,Қазақша,Қазақша,Қазақша
 ,,,
 GAME CONTENT,,,
 FEED,Feed,Кормить,Арна
-WASH,Wash,Стирать,Жуу
+WASH,Wash,Мыть,Жуу
 SLEEP,Sleep,Спать,Ұйқы
 PLAY,Play,Играть,Ойнау
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
+HOME,Home,Дом,Үй
+JOURNAL,Journal,Журнал,Журнал
+SHOP,Shop,Магазин,Дүкен
+INVENTORY,Inventory,Инвентарь,Түгендеу
+HAPPINESS,Happiness,Счастье,Бақыт
 ,,,
 ,,,
 ALERTS,,,
@@ -39,7 +38,7 @@ BUTTON STUFF,,,
 DEFAULT,Default,По умолчанию,Әдепкі
 Default,Default,По умолчанию,Әдепкі
 START,Start,Начать,Бастау
-SHOP,Shop,Магазин,Дүкен
+,,,
 OPTIONS,Options,Настройки,Параметрлер
 CREDITS,Credits,Титры,Несиелер
 QUIT,Quit,Выйти,Шығу
@@ -53,7 +52,7 @@ CONTROLS,Controls,Управление,Басқару элементтері
 LANGUAGE,Language,Язык,Тіл
 ACCESSIBILITY,Accessibility,Доступность,Қол жетімділік
 CLOSE,Close,Закрыть,Жабу
-CANCEL,Cancel,Отмена,Бас тарту
+CANCEL,Cancel,Отмена,Болдырмау
 RESET_SETTINGS,Reset Settings,Сбросить настройки,Параметрлерді қалпына келтіру
 LEAVE_SHOP,Leave Shop,Покинуть магазин,Дүкеннен шығыңыз
 PURCHASE,Purchase,Приобрести,Сатып алу

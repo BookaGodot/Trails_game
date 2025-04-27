@@ -1,8 +1,9 @@
-[gd_resource type="Theme" load_steps=11 format=3 uid="uid://bqc5t842iovlb"]
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://bqc5t842iovlb"]
 
 [ext_resource type="Texture2D" uid="uid://2gg7587swfs1" path="res://elements/GUI/textures/button_base.png" id="1_niqew"]
 [ext_resource type="Texture2D" uid="uid://d4lmvagv1otdr" path="res://elements/GUI/textures/NavBarBorder.png" id="2_niqew"]
 [ext_resource type="Texture2D" uid="uid://cd6qoxgpdwe5m" path="res://elements/GUI/textures/Pressed Button.png" id="3_661fa"]
+[ext_resource type="FontFile" uid="uid://c0brss2g2tf7g" path="res://elements/GUI/system/Geologica-VariableFont_CRSV,SHRP,slnt,wght.ttf" id="4_pttgp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_niqew"]
 texture = ExtResource("1_niqew")
@@ -21,11 +22,14 @@ texture = ExtResource("2_niqew")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ur8pn"]
 texture = ExtResource("2_niqew")
+modulate_color = Color(0.72, 0.5004, 0.2808, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_77q4r"]
 texture = ExtResource("3_661fa")
 
 [resource]
+default_font = ExtResource("4_pttgp")
+default_font_size = 16
 Button/styles/focus = SubResource("StyleBoxTexture_niqew")
 Button/styles/hover = SubResource("StyleBoxTexture_661fa")
 Button/styles/normal = SubResource("StyleBoxTexture_pttgp")
