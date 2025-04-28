@@ -9,38 +9,27 @@ enum Temperaments { NEUTRAL, FUNNY, ANXIOUS, SHY, MELANCHOLY, STUBBORN }
 var temperament : Temperaments = Temperaments.NEUTRAL
 
 
-func _input(event: InputEvent) -> void:
-	if event is InputEventKey and event.is_pressed():
-		if event.keycode == KEY_F:
-			feed()
-		elif event.keycode == KEY_C:
-			clean()
-		elif event.keycode == KEY_H:
-			make_happy()
+func _ready() -> void:
+	# TODO: implement idle animation change based on temperament
+	animation_manager.play_idle_animation("neutral")
 
 
 func feed() -> void:
-	state.change_care(0.5)
-	
-	anim_player.play("play")
+	state.change_hunger(1.0)
+	animation_manager.remove_state_animation("hungry")
+	animation_manager.play_action_animation("feed")
 
 
 func clean() -> void:
-	state.change_care(0.5)
-	
-	anim_player.play("wash")
+	state.change_cleanliness(1.0)
+	animation_manager.play_action_animation("clean")
+	$Sprite2D/BubblesEffect.show()
 
 
 func make_happy() -> void:
-	state.change_care(0.5)
-	anim_player.play("play")
-
-
-func sleep() -> void:
-	state.change_care(0.5)
-	anim_player.play("sleep")
+	state.change_happiness(1.0)
+	animation_manager.play_action_animation("play")
 
 
 func _on_click() -> void:
-	anim_player.stop()
-	anim_player.play("touch")
+	animation_manager.play_action_animation("pet")

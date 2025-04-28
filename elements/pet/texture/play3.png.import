@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvaa55esf3hcy"
-path="res://.godot/imported/sleep.png-d16f5bcb699016607341826d3ef5661d.ctex"
+uid="uid://dk5wuvmpvk6n"
+path="res://.godot/imported/play3.png-5d3d1cda71fa9028eea94de7d6a34363.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://elements/pet/texture/sleep.png"
-dest_files=["res://.godot/imported/sleep.png-d16f5bcb699016607341826d3ef5661d.ctex"]
+source_file="res://elements/pet/texture/play3.png"
+dest_files=["res://.godot/imported/play3.png-5d3d1cda71fa9028eea94de7d6a34363.ctex"]
 
 [params]
 

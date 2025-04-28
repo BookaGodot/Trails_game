@@ -17,7 +17,7 @@ func _ready() -> void:
 	feed_button.pressed.connect(on_feed_pressed)
 	wash_button.pressed.connect(on_wash_pressed)
 	play_button.pressed.connect(on_play_pressed)
-	sleep_button.pressed.connect(on_sleep_pressed)
+	#sleep_button.pressed.connect(on_sleep_pressed)
 	
 	money_update()
 
@@ -39,5 +39,5 @@ func on_wash_pressed():
 func on_play_pressed():
 	pet.make_happy()
 
-func on_sleep_pressed():
-	pet.sleep()
+#func on_sleep_pressed():
+	#pet.sleep()

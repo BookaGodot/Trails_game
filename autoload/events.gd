@@ -8,6 +8,7 @@ signal money_updated
 
 var money = 20
 
+
 func _ready() -> void:
 	money = SaveSystem.get_var("money", 20)
 

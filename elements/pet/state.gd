@@ -42,27 +42,31 @@ func save() -> void:
 func change_care(amount : float) -> void:
 	care = clamp(care + amount, 0.0, 7.0)
 	Events.care_changed.emit(care)
-	print("Care changed: " + str(care))
+	#print("Care changed: " + str(care))
 
 
 func change_happiness(amount : float) -> void:
 	happiness = clamp(happiness + amount, 0.0, 1.0)
-	if happiness <= 0.0:
-		%AnimationManager.queue_state_animation("")
+	#if happiness <= 0.0:
+		#%AnimationManager.queue_state_animation("play")
 	Events.happiness_changed.emit(happiness)
-	print("Happiness changed: " + str(happiness))
+	#print("Happiness changed: " + str(happiness))
 
 
 func change_hunger(amount) -> void:
 	hunger = clamp(hunger + amount, 0.0, 1.0)
+	if hunger <= 0.0:
+		%AnimationManager.queue_state_animation("hungry")
 	Events.hunger_changed.emit(hunger)
 	print("Hunger changed: " + str(hunger))
 
 
 func change_cleanliness(amount) -> void:
 	cleanliness = clamp(cleanliness + amount, 0.0, 1.0)
+	#if cleanliness <= 0.0:
+		#%AnimationManager.queue_state_animation("dirty")
 	Events.cleanliness_changed.emit(cleanliness)
-	print("Cleanliness changed: " + str(cleanliness))
+	#print("Cleanliness changed: " + str(cleanliness))
 
 
 func _decay_states(time : float) -> void:
@@ -70,4 +74,3 @@ func _decay_states(time : float) -> void:
 	change_happiness(-decay)
 	change_hunger(-decay)
 	change_cleanliness(-decay)
-	change_care(-decay)

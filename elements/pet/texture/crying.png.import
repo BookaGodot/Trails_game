@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck0u10m6g1qyd"
-path.s3tc="res://.godot/imported/grumpy.png-13a2f9a8ab89ce292eebe75721c83459.s3tc.ctex"
-path.etc2="res://.godot/imported/grumpy.png-13a2f9a8ab89ce292eebe75721c83459.etc2.ctex"
+uid="uid://dxfmfc5j8lpxt"
+path.s3tc="res://.godot/imported/crying.png-b62d01176c630e13472a7cfe32e45f49.s3tc.ctex"
+path.etc2="res://.godot/imported/crying.png-b62d01176c630e13472a7cfe32e45f49.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://elements/pet/texture/grumpy.png"
-dest_files=["res://.godot/imported/grumpy.png-13a2f9a8ab89ce292eebe75721c83459.s3tc.ctex", "res://.godot/imported/grumpy.png-13a2f9a8ab89ce292eebe75721c83459.etc2.ctex"]
+source_file="res://elements/pet/texture/crying.png"
+dest_files=["res://.godot/imported/crying.png-b62d01176c630e13472a7cfe32e45f49.s3tc.ctex", "res://.godot/imported/crying.png-b62d01176c630e13472a7cfe32e45f49.etc2.ctex"]
 
 [params]
 

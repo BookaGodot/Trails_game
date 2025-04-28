@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqwt4r250prgh"
-path="res://.godot/imported/alarmed.png-8de3dfa0d892505504b092a607167bb2.ctex"
+uid="uid://cpf3dq31gijt"
+path="res://.godot/imported/alarm.png-7d2f0983a1fdd3af3ddaf180f1c0b8d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://elements/pet/texture/alarmed.png"
-dest_files=["res://.godot/imported/alarmed.png-8de3dfa0d892505504b092a607167bb2.ctex"]
+source_file="res://elements/pet/texture/alarm.png"
+dest_files=["res://.godot/imported/alarm.png-7d2f0983a1fdd3af3ddaf180f1c0b8d9.ctex"]
 
 [params]
 

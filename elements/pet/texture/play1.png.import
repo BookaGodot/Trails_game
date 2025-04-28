@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlpg5gxnqf8mn"
-path="res://.godot/imported/love.png-6370243a6cfeb092e9242886e6f232d3.ctex"
+uid="uid://iaanbdbw5nea"
+path="res://.godot/imported/play1.png-40bd4014662ee15eb395209ca434a757.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://elements/pet/texture/love.png"
-dest_files=["res://.godot/imported/love.png-6370243a6cfeb092e9242886e6f232d3.ctex"]
+source_file="res://elements/pet/texture/play1.png"
+dest_files=["res://.godot/imported/play1.png-40bd4014662ee15eb395209ca434a757.ctex"]
 
 [params]
 

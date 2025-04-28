@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dim331i41wf5m"
-path="res://.godot/imported/wantstoeat.png-5dfea96a46de197ba581372c123de86d.ctex"
+uid="uid://diq2fuwigiy57"
+path="res://.godot/imported/play2.png-6084ea57d8a3cc63b5caf216d8bb9a22.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://elements/pet/texture/wantstoeat.png"
-dest_files=["res://.godot/imported/wantstoeat.png-5dfea96a46de197ba581372c123de86d.ctex"]
+source_file="res://elements/pet/texture/play2.png"
+dest_files=["res://.godot/imported/play2.png-6084ea57d8a3cc63b5caf216d8bb9a22.ctex"]
 
 [params]
 
