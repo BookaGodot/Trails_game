@@ -1,8 +1,10 @@
 class_name State
 extends Node
 
-const STATE_DECAY_DURATION : int = 10800
+const STATE_DECAY_DURATION : int = 10
 const STATE_DECAY_RATE = 1.0 / STATE_DECAY_DURATION
+
+@onready var animation_manager: AnimationManager = %AnimationManager
 
 var care : float
 
@@ -39,26 +41,28 @@ func save() -> void:
 
 func change_care(amount : float) -> void:
 	care = clamp(care + amount, 0.0, 7.0)
-	print("Care changed: " + str(care))
 	Events.care_changed.emit(care)
+	print("Care changed: " + str(care))
 
 
 func change_happiness(amount : float) -> void:
 	happiness = clamp(happiness + amount, 0.0, 1.0)
-	print("Happiness changed: " + str(happiness))
+	if happiness <= 0.0:
+		%AnimationManager.queue_state_animation("")
 	Events.happiness_changed.emit(happiness)
+	print("Happiness changed: " + str(happiness))
 
 
 func change_hunger(amount) -> void:
 	hunger = clamp(hunger + amount, 0.0, 1.0)
-	print("Hunger changed: " + str(hunger))
 	Events.hunger_changed.emit(hunger)
+	print("Hunger changed: " + str(hunger))
 
 
 func change_cleanliness(amount) -> void:
 	cleanliness = clamp(cleanliness + amount, 0.0, 1.0)
-	print("Cleanliness changed: " + str(cleanliness))
 	Events.cleanliness_changed.emit(cleanliness)
+	print("Cleanliness changed: " + str(cleanliness))
 
 
 func _decay_states(time : float) -> void:

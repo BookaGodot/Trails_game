@@ -4,9 +4,8 @@ extends Control
 enum Temperaments { NEUTRAL, FUNNY, ANXIOUS, SHY, MELANCHOLY, STUBBORN }
 
 @onready var state: State = %State
-@onready var anim_player: AnimationPlayer = %anim_player
+@onready var animation_manager: AnimationManager = %AnimationManager
 
-var age : float = 0.0
 var temperament : Temperaments = Temperaments.NEUTRAL
 
 
