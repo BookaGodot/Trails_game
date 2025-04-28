@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctt1584exn4da"
-path="res://.godot/imported/Cry.png-5dfcc7fce6bf0b90dc1d816e960cc8fa.ctex"
+uid="uid://c0nmmp4onwxym"
+path="res://.godot/imported/cry.png-3b9d2ac7a6f307e8a0e63768188b9ff0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://elements/pet/texture/Cry.png"
-dest_files=["res://.godot/imported/Cry.png-5dfcc7fce6bf0b90dc1d816e960cc8fa.ctex"]
+source_file="res://elements/pet/texture/cry.png"
+dest_files=["res://.godot/imported/cry.png-3b9d2ac7a6f307e8a0e63768188b9ff0.ctex"]
 
 [params]
 
