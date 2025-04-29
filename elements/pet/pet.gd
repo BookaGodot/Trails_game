@@ -16,19 +16,21 @@ func _ready() -> void:
 
 func feed() -> void:
 	state.change_hunger(1.0)
-	animation_manager.remove_state_animation("hungry")
 	animation_manager.play_action_animation("feed")
+	animation_manager.remove_state_animation("hungry")
 
 
 func clean() -> void:
 	state.change_cleanliness(1.0)
 	animation_manager.play_action_animation("clean")
-	$Sprite2D/BubblesEffect.show()
+	animation_manager.remove_state_animation("dirty")
+	$BubblesEffect.show()
 
 
 func make_happy() -> void:
 	state.change_happiness(1.0)
 	animation_manager.play_action_animation("play")
+	animation_manager.remove_state_animation("sad")
 
 
 func _on_click() -> void:

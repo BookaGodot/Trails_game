@@ -86,9 +86,10 @@ func clear_idle_animation() -> void:
 
 func _update_animation() -> void:
 	var animation_to_play: StringName = ""
-
-	$"../Sprite2D/BubblesEffect".hide()
-
+	
+	$"../BubblesEffect".hide()
+	$"../Sprite2D/DirtEffect".hide()
+	
 	if current_action_animation != "":
 		animation_to_play = current_action_animation
 	elif not state_animation_queue.is_empty():

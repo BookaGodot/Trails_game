@@ -1,7 +1,7 @@
 class_name State
 extends Node
 
-const STATE_DECAY_DURATION : int = 10
+const STATE_DECAY_DURATION : int = 60
 const STATE_DECAY_RATE = 1.0 / STATE_DECAY_DURATION
 
 @onready var animation_manager: AnimationManager = %AnimationManager
@@ -47,8 +47,8 @@ func change_care(amount : float) -> void:
 
 func change_happiness(amount : float) -> void:
 	happiness = clamp(happiness + amount, 0.0, 1.0)
-	#if happiness <= 0.0:
-		#%AnimationManager.queue_state_animation("play")
+	if happiness <= 0.0:
+		%AnimationManager.queue_state_animation("sad")
 	Events.happiness_changed.emit(happiness)
 	#print("Happiness changed: " + str(happiness))
 
@@ -58,13 +58,13 @@ func change_hunger(amount) -> void:
 	if hunger <= 0.0:
 		%AnimationManager.queue_state_animation("hungry")
 	Events.hunger_changed.emit(hunger)
-	print("Hunger changed: " + str(hunger))
+	#print("Hunger changed: " + str(hunger))
 
 
 func change_cleanliness(amount) -> void:
 	cleanliness = clamp(cleanliness + amount, 0.0, 1.0)
-	#if cleanliness <= 0.0:
-		#%AnimationManager.queue_state_animation("dirty")
+	if cleanliness <= 0.0:
+		%AnimationManager.queue_state_animation("dirty")
 	Events.cleanliness_changed.emit(cleanliness)
 	#print("Cleanliness changed: " + str(cleanliness))
 
