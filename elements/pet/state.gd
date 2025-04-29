@@ -18,7 +18,7 @@ func _ready() -> void:
 	cleanliness = SaveSystem.get_var("cleanliness", 1.0)
 	
 	var elapsed_time = clamp(
-			Time.get_unix_time_from_system() - SaveSystem.get_var("time", Time.get_unix_time_from_system()), 
+			Time.get_unix_time_from_system() - SaveSystem.get_var("last_login_time", Time.get_unix_time_from_system()), 
 			0.0, STATE_DECAY_DURATION
 		)
 	_decay_states(elapsed_time)
@@ -27,7 +27,7 @@ func _ready() -> void:
 
 
 func save() -> void:
-	SaveSystem.set_var("time", Time.get_unix_time_from_system())
+	SaveSystem.set_var("last_login_time", Time.get_unix_time_from_system())
 	SaveSystem.set_var("happiness", happiness)
 	SaveSystem.set_var("hunger", hunger)
 	SaveSystem.set_var("cleanliness", cleanliness)
