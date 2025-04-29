@@ -93,7 +93,7 @@ custom_minimum_size = Vector2(444, 64)
 layout_mode = 2
 size_flags_horizontal = 4
 max_value = 7.0
-step = 0.5
+step = 0.1
 value = 4.0
 
 [node name="Pet" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_hcep6")]

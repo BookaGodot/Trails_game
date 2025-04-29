@@ -6,8 +6,6 @@ const STATE_DECAY_RATE = 1.0 / STATE_DECAY_DURATION
 
 @onready var animation_manager: AnimationManager = %AnimationManager
 
-var care : float
-
 # State variables
 var happiness : float
 var hunger : float
@@ -15,7 +13,6 @@ var cleanliness : float
 
 
 func _ready() -> void:
-	care = SaveSystem.get_var("care", 4.0)
 	happiness = SaveSystem.get_var("happiness", 1.0)
 	hunger = SaveSystem.get_var("hunger", 1.0)
 	cleanliness = SaveSystem.get_var("cleanliness", 1.0)
@@ -31,18 +28,11 @@ func _ready() -> void:
 
 func save() -> void:
 	SaveSystem.set_var("time", Time.get_unix_time_from_system())
-	SaveSystem.set_var("care", care)
 	SaveSystem.set_var("happiness", happiness)
 	SaveSystem.set_var("hunger", hunger)
 	SaveSystem.set_var("cleanliness", cleanliness)
 	SaveSystem.save()
 	print_rich("[color=green]States and time saved")
-
-
-func change_care(amount : float) -> void:
-	care = clamp(care + amount, 0.0, 7.0)
-	Events.care_changed.emit(care)
-	#print("Care changed: " + str(care))
 
 
 func change_happiness(amount : float) -> void:

@@ -11,7 +11,7 @@ extends CanvasLayer
 
 
 func _ready() -> void:
-	care_bar.value = pet.state.care
+	care_bar.value = pet.care
 	Events.care_changed.connect(update_care)
 	Events.money_updated.connect(money_update)
 	feed_button.pressed.connect(on_feed_pressed)
