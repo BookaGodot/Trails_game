@@ -15,14 +15,17 @@ var temperament : Temperaments = Temperaments.NEUTRAL
 
 func _ready() -> void:
 	care = SaveSystem.get_var("care", 4.0)
+	_choose_and_play_idle_animation()
 	_reduce_care_based_on_time()
-	# TODO: implement idle animation change based on temperament
-	animation_manager.play_idle_animation("neutral")
 
 
 func change_care(amount : float) -> void:
 	care = clamp(care + amount, 0.0, 7.0)
 	SaveSystem.set_var("care", care)
+	if care <= 3.0:
+		%AnimationManager.play_idle_animation("sad")
+	else:
+		_choose_and_play_idle_animation()
 	Events.care_changed.emit(care)
 	#print("Care changed: " + str(care))
 
@@ -48,7 +51,7 @@ func make_happy() -> void:
 	change_care(0.34)
 	state.change_happiness(1.0)
 	animation_manager.play_action_animation("play")
-	animation_manager.remove_state_animation("sad")
+	animation_manager.remove_state_animation("crying")
 	SaveSystem.set_var("last_playing_time", Time.get_unix_time_from_system())
 
 
@@ -70,8 +73,30 @@ func _reduce_care_based_on_time() -> void:
 	var days_since_playing = _get_time_intervals_passed(SaveSystem.get_var("last_playing_time", current_time), CARE_REDUCE_INTERVAL)
 	if days_since_playing > 0:
 		change_care(-0.17 * days_since_playing)
+	if days_since_playing % 3 == 0:
+		change_care(-1 * days_since_playing/3)
 
 
 func _get_time_intervals_passed(last_time: float, interval: float) -> int:
 	var elapsed = Time.get_unix_time_from_system() - last_time
 	return int(elapsed / interval)
+
+
+func _choose_and_play_idle_animation() -> void:
+	var idle_animation_name : String
+	
+	match temperament:
+		Temperaments.NEUTRAL:
+			idle_animation_name = "neutral"
+		Temperaments.FUNNY:
+			pass
+		Temperaments.ANXIOUS:
+			pass
+		Temperaments.SHY:
+			pass
+		Temperaments.MELANCHOLY:
+			pass
+		Temperaments.STUBBORN:
+			pass
+	
+	animation_manager.play_idle_animation(idle_animation_name)

@@ -38,7 +38,7 @@ func save() -> void:
 func change_happiness(amount : float) -> void:
 	happiness = clamp(happiness + amount, 0.0, 1.0)
 	if happiness <= 0.0:
-		%AnimationManager.queue_state_animation("sad")
+		%AnimationManager.queue_state_animation("crying")
 	Events.happiness_changed.emit(happiness)
 	#print("Happiness changed: " + str(happiness))
 

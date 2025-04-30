@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://by0bh4cw06vy4"]
+[gd_scene load_steps=37 format=3 uid="uid://by0bh4cw06vy4"]
 
 [ext_resource type="Script" uid="uid://yy56ygcbsmwj" path="res://elements/pet/pet.gd" id="1_w8ihv"]
 [ext_resource type="Texture2D" uid="uid://iyimeitn4moi" path="res://elements/pet/texture/idle.png" id="2_28ajw"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dk5wuvmpvk6n" path="res://elements/pet/texture/play3.png" id="10_0n8r5"]
 [ext_resource type="Texture2D" uid="uid://bvkwotn5se73f" path="res://elements/pet/texture/hungry.png" id="10_kw8ss"]
 [ext_resource type="Texture2D" uid="uid://dxfmfc5j8lpxt" path="res://elements/pet/texture/crying.png" id="11_e3ja3"]
+[ext_resource type="Texture2D" uid="uid://bc8lfcnevio2l" path="res://elements/pet/texture/sad.png" id="14_0n8r5"]
 
 [sub_resource type="Animation" id="Animation_2scak"]
 length = 0.001
@@ -453,11 +454,53 @@ tracks/2/keys = {
 "values": [0, 39]
 }
 
+[sub_resource type="Animation" id="Animation_0n8r5"]
+resource_name = "sad"
+length = 0.6
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("14_0n8r5")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [30]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 29]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kw8ss"]
 _data = {
 &"alarmed": SubResource("Animation_wc1ka"),
 &"angry": SubResource("Animation_kw8ss"),
-&"neutral": SubResource("Animation_y2e4w")
+&"neutral": SubResource("Animation_y2e4w"),
+&"sad": SubResource("Animation_0n8r5")
 }
 
 [sub_resource type="Animation" id="Animation_e3ja3"]
@@ -604,9 +647,9 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0n8r5"]
 _data = {
+&"crying": SubResource("Animation_rf5dc"),
 &"dirty": SubResource("Animation_pgk2j"),
-&"hungry": SubResource("Animation_cu74m"),
-&"sad": SubResource("Animation_rf5dc")
+&"hungry": SubResource("Animation_cu74m")
 }
 
 [node name="Pet" type="Control"]
@@ -655,8 +698,8 @@ hframes = 42
 unique_name_in_owner = true
 script = ExtResource("3_12jhs")
 action_animations = Array[StringName]([&"pet", &"feed", &"play", &"clean"])
-state_animations = Array[StringName]([&"hungry", &"sad", &"dirty"])
-idle_animations = Array[StringName]([&"neutral", &"alarmed", &"angry"])
+state_animations = Array[StringName]([&"hungry", &"crying", &"dirty"])
+idle_animations = Array[StringName]([&"neutral", &"alarmed", &"angry", &"sad"])
 
 [node name="State" type="Node" parent="."]
 unique_name_in_owner = true

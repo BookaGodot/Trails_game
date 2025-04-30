@@ -41,7 +41,8 @@ func queue_state_animation(animation_name: StringName) -> void:
 	
 	state_animation_queue.append(full_animation_name)
 	print_rich("[color=yellow]State animation added")
-	_update_animation()
+	if state_animation_queue.size() == 1:
+		_update_animation()
 
 
 func remove_state_animation(animation_name: StringName) -> void:
