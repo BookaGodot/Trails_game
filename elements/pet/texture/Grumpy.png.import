@@ -2,22 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck0u10m6g1qyd"
-path.s3tc="res://.godot/imported/grumpy.png-13a2f9a8ab89ce292eebe75721c83459.s3tc.ctex"
-path.etc2="res://.godot/imported/grumpy.png-13a2f9a8ab89ce292eebe75721c83459.etc2.ctex"
+uid="uid://vykku7xydv7q"
+path="res://.godot/imported/grumpy.png-13a2f9a8ab89ce292eebe75721c83459.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://elements/pet/texture/grumpy.png"
-dest_files=["res://.godot/imported/grumpy.png-13a2f9a8ab89ce292eebe75721c83459.s3tc.ctex", "res://.godot/imported/grumpy.png-13a2f9a8ab89ce292eebe75721c83459.etc2.ctex"]
+dest_files=["res://.godot/imported/grumpy.png-13a2f9a8ab89ce292eebe75721c83459.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
@@ -33,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
