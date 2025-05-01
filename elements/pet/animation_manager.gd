@@ -2,6 +2,7 @@ class_name AnimationManager
 extends Node
 
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
+@onready var random_animation_timer: Timer = $RandomAnimationTimer
 
 @export var action_animations: Array[StringName]
 @export var state_animations: Array[StringName]
@@ -18,12 +19,16 @@ var state_animation_queue: Array[StringName] = []
 func _ready() -> void:
 	animation_player.animation_finished.connect(_on_animation_finished)
 	_update_animation()
+	random_animation_timer.timeout.connect(play_random_animation.bind(random_animations.pick_random()))
 
 
 func play_action_animation(animation_name: StringName) -> void:
 	if not action_animations.has(animation_name):
 		push_error("action_animations doesn't have animation called \"" + animation_name + "\"")
 		return
+	
+	clear_random_animation()
+	random_animation_timer.start()
 	
 	current_action_animation = "action/" + animation_name
 	_update_animation()

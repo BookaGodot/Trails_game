@@ -1,7 +1,7 @@
 class_name State
 extends Node
 
-const STATE_DECAY_DURATION : int = 60
+const STATE_DECAY_DURATION : int = 120
 const STATE_DECAY_RATE = 1.0 / STATE_DECAY_DURATION
 
 @onready var animation_manager: AnimationManager = %AnimationManager

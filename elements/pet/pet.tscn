@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://by0bh4cw06vy4"]
+[gd_scene load_steps=40 format=3 uid="uid://by0bh4cw06vy4"]
 
 [ext_resource type="Script" uid="uid://yy56ygcbsmwj" path="res://elements/pet/pet.gd" id="1_w8ihv"]
 [ext_resource type="Texture2D" uid="uid://iyimeitn4moi" path="res://elements/pet/texture/idle.png" id="2_28ajw"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://dxfmfc5j8lpxt" path="res://elements/pet/texture/crying.png" id="11_e3ja3"]
 [ext_resource type="Texture2D" uid="uid://bc8lfcnevio2l" path="res://elements/pet/texture/sad.png" id="14_0n8r5"]
 [ext_resource type="Texture2D" uid="uid://djb0bn0k3d2aa" path="res://elements/pet/texture/happy.png" id="15_klv8h"]
+[ext_resource type="Texture2D" uid="uid://bupkp0828b6g2" path="res://elements/pet/texture/sleeping.png" id="16_1e2rg"]
 
 [sub_resource type="Animation" id="Animation_2scak"]
 length = 0.001
@@ -415,6 +416,47 @@ tracks/2/keys = {
 "values": [58]
 }
 
+[sub_resource type="Animation" id="Animation_mo4l1"]
+resource_name = "neutral"
+length = 1.18
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("15_klv8h")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [59]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.18),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 39]
+}
+
 [sub_resource type="Animation" id="Animation_y2e4w"]
 resource_name = "neutral"
 length = 0.82
@@ -497,47 +539,6 @@ tracks/2/keys = {
 "values": [0, 29]
 }
 
-[sub_resource type="Animation" id="Animation_mo4l1"]
-resource_name = "neutral"
-length = 1.18
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("15_klv8h")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [59]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.18),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0, 39]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kw8ss"]
 _data = {
 &"alarmed": SubResource("Animation_wc1ka"),
@@ -548,7 +549,44 @@ _data = {
 }
 
 [sub_resource type="Animation" id="Animation_e3ja3"]
+length = 0.6
 loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [42]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("16_1e2rg")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 30]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wc1ka"]
 _data = {
@@ -743,7 +781,13 @@ unique_name_in_owner = true
 script = ExtResource("3_12jhs")
 action_animations = Array[StringName]([&"pet", &"feed", &"play", &"clean"])
 state_animations = Array[StringName]([&"hungry", &"crying", &"dirty"])
+random_animations = Array[StringName]([&"sleep"])
 idle_animations = Array[StringName]([&"neutral", &"alarmed", &"angry", &"sad", &"happy"])
+
+[node name="RandomAnimationTimer" type="Timer" parent="AnimationManager"]
+wait_time = 60.0
+one_shot = true
+autostart = true
 
 [node name="State" type="Node" parent="."]
 unique_name_in_owner = true

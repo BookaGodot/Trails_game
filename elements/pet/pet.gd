@@ -96,7 +96,7 @@ func _reduce_care_based_on_time() -> void:
 	if days_since_playing > 0:
 		change_care(-0.17 * days_since_playing)
 	if days_since_playing % 3 == 0:
-		change_care(-1 * days_since_playing/3)
+		change_care(-1 * days_since_playing/3.0)
 
 
 func _get_time_intervals_passed(last_time: float, interval: float) -> int:
