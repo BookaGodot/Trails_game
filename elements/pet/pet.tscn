@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://by0bh4cw06vy4"]
+[gd_scene load_steps=41 format=3 uid="uid://by0bh4cw06vy4"]
 
 [ext_resource type="Script" uid="uid://yy56ygcbsmwj" path="res://elements/pet/pet.gd" id="1_w8ihv"]
 [ext_resource type="Texture2D" uid="uid://iyimeitn4moi" path="res://elements/pet/texture/idle.png" id="2_28ajw"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://rhbds55jbyrd" path="res://elements/pet/texture/eating.png" id="5_2scak"]
 [ext_resource type="Texture2D" uid="uid://vywx8m4k2mut" path="res://elements/pet/texture/taking_bath.png" id="5_y2e4w"]
 [ext_resource type="Texture2D" uid="uid://4arldt4t6gf8" path="res://elements/pet/texture/angry.png" id="6_j6r3l"]
+[ext_resource type="Script" uid="uid://dnoioakmyejjy" path="res://elements/pet/temperament.gd" id="6_mo4l1"]
 [ext_resource type="Texture2D" uid="uid://iaanbdbw5nea" path="res://elements/pet/texture/play1.png" id="8_rf5dc"]
 [ext_resource type="Texture2D" uid="uid://diq2fuwigiy57" path="res://elements/pet/texture/play2.png" id="9_pgk2j"]
 [ext_resource type="Texture2D" uid="uid://cpf3dq31gijt" path="res://elements/pet/texture/alarm.png" id="9_y2e4w"]
@@ -788,6 +789,9 @@ idle_animations = Array[StringName]([&"neutral", &"alarmed", &"angry", &"sad", &
 wait_time = 60.0
 one_shot = true
 autostart = true
+
+[node name="Temperament" type="Node" parent="."]
+script = ExtResource("6_mo4l1")
 
 [node name="State" type="Node" parent="."]
 unique_name_in_owner = true
