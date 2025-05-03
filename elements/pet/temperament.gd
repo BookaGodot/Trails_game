@@ -29,20 +29,11 @@ func _ready() -> void:
 func change_temperament(type : Temperaments, amount : float) -> void:
 	temperament_points[type] += amount 
 	temperament = _get_current_temperament()
-	_choose_and_play_idle_animation()
+	choose_and_play_idle_animation()
 	SaveSystem.set_var("temperament_points", temperament_points)
 
 
-func _get_current_temperament() -> int:
-	var max : int = 0
-	print(temperament_points)
-	for i in temperament_points:
-		if temperament_points[i] >= TEMPERAMENT_POINTS and temperament_points[i] >= temperament_points[max]:
-			max = i
-	return max
-
-
-func _choose_and_play_idle_animation() -> void:
+func choose_and_play_idle_animation() -> void:
 	var idle_animation_name : String = "neutral"
 	
 	match temperament:
@@ -60,3 +51,12 @@ func _choose_and_play_idle_animation() -> void:
 			idle_animation_name = "angry"
 	
 	animation_manager.play_idle_animation(idle_animation_name)
+
+
+func _get_current_temperament() -> int:
+	var max : int = 0
+	print(temperament_points)
+	for i in temperament_points:
+		if temperament_points[i] >= TEMPERAMENT_POINTS and temperament_points[i] >= temperament_points[max]:
+			max = i
+	return max

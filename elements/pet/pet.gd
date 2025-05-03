@@ -20,6 +20,8 @@ func change_care(amount : float) -> void:
 	SaveSystem.set_var("care", care)
 	if care <= 3.0:
 		animation_manager.play_idle_animation("sad")
+	else:
+		%Temperament.choose_and_play_idle_animation()
 	Events.care_changed.emit(care)
 	#print("Care changed: " + str(care))
 
