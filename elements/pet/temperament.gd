@@ -3,7 +3,7 @@ extends Node
 
 const TEMPERAMENT_POINTS : int = 1000
 
-enum Temperaments { NEUTRAL, FUNNY, ANXIOUS, SHY, MELANCHOLY, STUBBORN }
+enum Temperaments { NEUTRAL, FUNNY, ANXIOUS, SHY, DREAMY, STUBBORN }
 
 @onready var animation_manager: AnimationManager = %AnimationManager
 
@@ -12,18 +12,21 @@ var temperament : Temperaments = Temperaments.NEUTRAL
 
 
 func _ready() -> void:
+	SaveSystem.delete_all()
+	SaveSystem.save()
 	var temp = SaveSystem.get_var("temperament_points", { 
 		Temperaments.NEUTRAL: 0, 
 		Temperaments.FUNNY: 0,
 		Temperaments.ANXIOUS: 0,
 		Temperaments.SHY: 0,
-		Temperaments.MELANCHOLY: 0,
+		Temperaments.DREAMY: 0,
 		Temperaments.STUBBORN: 0,
 	})
 	for i in temp:
 		temperament_points[int(i)] = int(temp[i])
 	
 	temperament = _get_current_temperament()
+	choose_and_play_idle_animation()
 
 
 func change_temperament(type : Temperaments, amount : float) -> void:
@@ -34,7 +37,7 @@ func change_temperament(type : Temperaments, amount : float) -> void:
 
 
 func choose_and_play_idle_animation() -> void:
-	var idle_animation_name : String = "neutral"
+	var idle_animation_name : String
 	
 	match temperament:
 		Temperaments.FUNNY:
@@ -45,10 +48,13 @@ func choose_and_play_idle_animation() -> void:
 		Temperaments.SHY:
 			# TODO
 			pass
-		Temperaments.MELANCHOLY:
-			idle_animation_name = "sad"
+		Temperaments.DREAMY:
+			# TODO
+			pass
 		Temperaments.STUBBORN:
 			idle_animation_name = "angry"
+		_:
+			idle_animation_name = "neutral"
 	
 	animation_manager.play_idle_animation(idle_animation_name)
 
