@@ -2,6 +2,8 @@ class_name AnimationManager
 extends Node
 
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
+@onready var random_animation_timer: Timer = $RandomAnimationTimer
+@onready var random_phrase_timer: Timer = %RandomPhraseTimer
 
 @export var action_animations: Array[StringName]
 @export var state_animations: Array[StringName]
@@ -18,12 +20,17 @@ var state_animation_queue: Array[StringName] = []
 func _ready() -> void:
 	animation_player.animation_finished.connect(_on_animation_finished)
 	_update_animation()
+	random_animation_timer.timeout.connect(play_random_animation.bind(random_animations.pick_random()))
 
 
 func play_action_animation(animation_name: StringName) -> void:
 	if not action_animations.has(animation_name):
 		push_error("action_animations doesn't have animation called \"" + animation_name + "\"")
 		return
+	
+	clear_random_animation()
+	random_animation_timer.start()
+	random_phrase_timer.start()
 	
 	current_action_animation = "action/" + animation_name
 	_update_animation()
@@ -41,13 +48,7 @@ func queue_state_animation(animation_name: StringName) -> void:
 	
 	state_animation_queue.append(full_animation_name)
 	print_rich("[color=yellow]State animation added")
-	_update_animation()
-
-
-func remove_state_animation(animation_name: StringName) -> void:
-	if not state_animation_queue.is_empty():
-		state_animation_queue.erase("state/" + animation_name)
-		print_rich("[color=red]State animation removed")
+	if state_animation_queue.size() == 1:
 		_update_animation()
 
 
@@ -74,6 +75,13 @@ func clear_action_animation() -> void:
 	_update_animation()
 
 
+func remove_state_animation(animation_name: StringName) -> void:
+	if not state_animation_queue.is_empty():
+		state_animation_queue.erase("state/" + animation_name)
+		print_rich("[color=red]State animation removed")
+		_update_animation()
+
+
 func clear_random_animation() -> void:
 	current_random_animation = ""
 	_update_animation()
@@ -87,8 +95,8 @@ func clear_idle_animation() -> void:
 func _update_animation() -> void:
 	var animation_to_play: StringName = ""
 	
-	$"../BubblesEffect".hide()
-	$"../Sprite2D/DirtEffect".hide()
+	%BubblesEffect.hide()
+	%DirtEffect.hide()
 	
 	if current_action_animation != "":
 		animation_to_play = current_action_animation
