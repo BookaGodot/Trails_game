@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://vywx8m4k2mut"
 path.s3tc="res://.godot/imported/taking_bath.png-9a015349cb0faf9c6aac0c4e270d0271.s3tc.ctex"
+path.etc2="res://.godot/imported/taking_bath.png-9a015349cb0faf9c6aac0c4e270d0271.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://elements/pet/texture/taking_bath.png"
-dest_files=["res://.godot/imported/taking_bath.png-9a015349cb0faf9c6aac0c4e270d0271.s3tc.ctex"]
+dest_files=["res://.godot/imported/taking_bath.png-9a015349cb0faf9c6aac0c4e270d0271.s3tc.ctex", "res://.godot/imported/taking_bath.png-9a015349cb0faf9c6aac0c4e270d0271.etc2.ctex"]
 
 [params]
 

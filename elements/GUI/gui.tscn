@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bxn7bi0xs1kwj"]
+[gd_scene load_steps=15 format=3 uid="uid://bxn7bi0xs1kwj"]
 
 [ext_resource type="Script" uid="uid://ntrivepckrki" path="res://elements/GUI/gui.gd" id="1_b7ps2"]
 [ext_resource type="PackedScene" uid="uid://by0bh4cw06vy4" path="res://elements/pet/pet.tscn" id="2_hcep6"]
@@ -7,27 +7,23 @@
 [ext_resource type="PackedScene" uid="uid://cnm32lcatpelo" path="res://elements/GUI/component/button/small_button.tscn" id="4_e1ebx"]
 [ext_resource type="Texture2D" uid="uid://xhhwfhq0jm02" path="res://scenes/map/backgrounds/Background1.png" id="4_woc13"]
 [ext_resource type="Texture2D" uid="uid://bjcpclj44swsa" path="res://elements/GUI/textures/Bath Icon.png" id="5_dja7h"]
-[ext_resource type="PackedScene" uid="uid://chjie87r2ygl" path="res://elements/GUI/component/shop/shop_item.tscn" id="5_nro1y"]
-[ext_resource type="Script" uid="uid://bioymb6t3lma3" path="res://elements/GUI/shop_control.gd" id="5_yswpu"]
+[ext_resource type="Texture2D" uid="uid://by0xq3xuw684x" path="res://elements/GUI/textures/Home Icon.png" id="5_g1ela"]
+[ext_resource type="Texture2D" uid="uid://ccfbn7w0t0gna" path="res://elements/GUI/textures/Sleep Icon.png" id="6_6ud22"]
 [ext_resource type="Texture2D" uid="uid://sfy48cqc70vn" path="res://elements/GUI/textures/Play Icon.png" id="6_8wje1"]
 [ext_resource type="Texture2D" uid="uid://bfcf2o7siwog2" path="res://elements/GUI/textures/Journal Icon.png" id="6_mqjsf"]
-[ext_resource type="Script" uid="uid://b1ueipbohmu7d" path="res://elements/GUI/component/shop/shop_item_catalog/shop_item.gd" id="6_tksfj"]
 [ext_resource type="PackedScene" uid="uid://bbf13fblc3xkg" path="res://elements/GUI/component/button/plus_button.tscn" id="7_mqjsf"]
-[ext_resource type="Resource" uid="uid://du04e1cjmrmaq" path="res://elements/GUI/component/shop/shop_item_catalog/cookie.tres" id="7_njkvj"]
 [ext_resource type="Texture2D" uid="uid://bmxxjucyxga5m" path="res://elements/GUI/textures/Shop Icon.png" id="7_nro1y"]
 [ext_resource type="Texture2D" uid="uid://cpgpur7tu8ejn" path="res://elements/GUI/textures/Inventory Icon.png" id="8_yswpu"]
-[ext_resource type="Texture2D" uid="uid://b2qo0qws2r5dx" path="res://elements/GUI/textures/coin_money.png" id="9_6h1wv"]
-[ext_resource type="Texture2D" uid="uid://dtek12t2n3m30" path="res://elements/GUI/textures/settings.png" id="10_nro1y"]
 
 [node name="GUI" type="CanvasLayer"]
 layer = 5
 script = ExtResource("1_b7ps2")
 
 [node name="background" type="TextureRect" parent="."]
-offset_right = 1080.0
-offset_bottom = 1920.0
+offset_right = 2304.0
+offset_bottom = 4096.0
+scale = Vector2(0.3125, 0.3125)
 texture = ExtResource("4_woc13")
-expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -48,30 +44,24 @@ metadata/_edit_lock_ = true
 
 [node name="wallet_frame" type="TextureRect" parent="MarginContainer/money_control"]
 layout_mode = 0
-offset_left = 702.0
-offset_top = 282.0
-offset_right = 1002.0
-offset_bottom = 410.0
+offset_left = 486.0
+offset_top = 170.0
+offset_right = 630.0
+offset_bottom = 228.0
 texture = ExtResource("3_nro1y")
 expand_mode = 1
 
-[node name="money_count" type="Label" parent="MarginContainer/money_control/wallet_frame" groups=["money_counter"]]
+[node name="money_count" type="Label" parent="MarginContainer/money_control/wallet_frame"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 86.0
-offset_top = 3.0
-offset_right = 284.0
-offset_bottom = 126.0
-theme_override_constants/outline_size = 4
-theme_override_font_sizes/font_size = 52
+offset_left = 57.0
+offset_top = 8.0
+offset_right = 130.0
+offset_bottom = 51.0
+theme_override_font_sizes/font_size = 24
 text = "20"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="CoinMoney" type="Sprite2D" parent="MarginContainer/money_control/wallet_frame"]
-position = Vector2(64, 64)
-scale = Vector2(0.322727, 0.322727)
-texture = ExtResource("9_6h1wv")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -92,17 +82,16 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.792157, 0.384314, 1)
 theme_override_colors/font_outline_color = Color(0.545098, 0.364706, 0.235294, 1)
 theme_override_constants/outline_size = 8
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 32
 text = "HAPPINESS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HealthBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(860, 120)
+custom_minimum_size = Vector2(444, 64)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 48
 max_value = 7.0
 step = 0.5
 value = 4.0
@@ -111,226 +100,82 @@ value = 4.0
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="shop_control" type="Control" parent="MarginContainer"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-script = ExtResource("5_yswpu")
-shop_items = Array[ExtResource("6_tksfj")]([ExtResource("7_njkvj")])
-shop_item_instance = ExtResource("5_nro1y")
-
-[node name="bg_color" type="ColorRect" parent="MarginContainer/shop_control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -35.0
-offset_top = -35.0
-offset_right = 35.0
-offset_bottom = 35.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(1, 0.980392, 0.94902, 1)
-
-[node name="tab_color" type="ColorRect" parent="MarginContainer/shop_control"]
-layout_mode = 2
-offset_left = -35.0
-offset_top = 176.0
-offset_right = 1045.0
-offset_bottom = 282.0
-grow_horizontal = 2
-color = Color(1, 0.956863, 0.788235, 1)
-
-[node name="shop_label" type="Label" parent="MarginContainer/shop_control"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = -34.0
-offset_top = -33.0
-offset_right = 35.0
-offset_bottom = 177.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0.545098, 0.364706, 0.235294, 1)
-theme_override_colors/font_outline_color = Color(0.545098, 0.364706, 0.235294, 1)
-theme_override_constants/outline_size = 4
-theme_override_font_sizes/font_size = 64
-text = "SHOP"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="shop_tab" type="TabContainer" parent="MarginContainer/shop_control"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = -35.0
-offset_top = 177.0
-offset_right = 1045.0
-offset_bottom = 1916.0
-tab_alignment = 1
-current_tab = 0
-tab_focus_mode = 0
-
-[node name="FOOD" type="Control" parent="MarginContainer/shop_control/shop_tab"]
-layout_mode = 2
-metadata/_tab_index = 0
-
-[node name="margin" type="MarginContainer" parent="MarginContainer/shop_control/shop_tab/FOOD"]
-layout_mode = 0
-offset_top = 1.0
-offset_right = 1079.0
-offset_bottom = 1342.0
-theme_override_constants/margin_top = 48
-
-[node name="food_grid" type="GridContainer" parent="MarginContainer/shop_control/shop_tab/FOOD/margin"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/h_separation = 32
-theme_override_constants/v_separation = 32
-columns = 2
-
-[node name="CARE" type="Control" parent="MarginContainer/shop_control/shop_tab"]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 1
-
-[node name="TOYS" type="Control" parent="MarginContainer/shop_control/shop_tab"]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 2
-
-[node name="CLOTHES" type="Control" parent="MarginContainer/shop_control/shop_tab"]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 3
-
-[node name="SPECIAL" type="Control" parent="MarginContainer/shop_control/shop_tab"]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 4
-
-[node name="money_control" type="Control" parent="MarginContainer/shop_control"]
-layout_mode = 3
-anchors_preset = 0
-mouse_filter = 2
-metadata/_edit_lock_ = true
-
-[node name="wallet_frame" type="TextureRect" parent="MarginContainer/shop_control/money_control"]
-layout_mode = 0
-offset_left = 709.0
-offset_top = 14.0
-offset_right = 1009.0
-offset_bottom = 142.0
-texture = ExtResource("3_nro1y")
-expand_mode = 1
-
-[node name="shop_money" type="Label" parent="MarginContainer/shop_control/money_control/wallet_frame" groups=["money_counter"]]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 81.0
-offset_top = 3.0
-offset_right = 297.0
-offset_bottom = 126.0
-theme_override_constants/outline_size = 4
-theme_override_font_sizes/font_size = 52
-text = "20"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="CoinMoney" type="Sprite2D" parent="MarginContainer/shop_control/money_control/wallet_frame"]
-position = Vector2(64, 64)
-scale = Vector2(0.322727, 0.322727)
-texture = ExtResource("9_6h1wv")
-
-[node name="buttons_control" type="Control" parent="MarginContainer"]
+[node name="control" type="Control" parent="MarginContainer"]
 layout_mode = 2
 mouse_filter = 2
 metadata/_edit_lock_ = true
 
-[node name="action_buttons" type="HBoxContainer" parent="MarginContainer/buttons_control"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -540.0
-offset_top = -550.0
-offset_right = 540.0
-offset_bottom = -294.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="button_hbox" type="HBoxContainer" parent="MarginContainer/control"]
+layout_mode = 2
+offset_top = 893.0
+offset_right = 647.0
+offset_bottom = 1037.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
-theme_override_constants/separation = 32
+theme_override_constants/separation = 16
 alignment = 1
 
-[node name="feed_button" parent="MarginContainer/buttons_control/action_buttons" instance=ExtResource("4_dja7h")]
+[node name="feed_button" parent="MarginContainer/control/button_hbox" instance=ExtResource("4_dja7h")]
 unique_name_in_owner = true
 self_modulate = Color(0.964706, 0.564706, 0.262745, 1)
 layout_mode = 2
 button_text = "FEED"
 
-[node name="wash_button" parent="MarginContainer/buttons_control/action_buttons" instance=ExtResource("4_dja7h")]
+[node name="wash_button" parent="MarginContainer/control/button_hbox" instance=ExtResource("4_dja7h")]
 unique_name_in_owner = true
 self_modulate = Color(0.415686, 0.737255, 0.811765, 1)
 layout_mode = 2
 button_text = "WASH"
 button_icon = ExtResource("5_dja7h")
 
-[node name="play_button" parent="MarginContainer/buttons_control/action_buttons" instance=ExtResource("4_dja7h")]
+[node name="play_button" parent="MarginContainer/control/button_hbox" instance=ExtResource("4_dja7h")]
 unique_name_in_owner = true
 self_modulate = Color(0.580392, 0.796078, 0.411765, 1)
 layout_mode = 2
 button_text = "PLAY"
 button_icon = ExtResource("6_8wje1")
 
-[node name="button_panel" type="PanelContainer" parent="MarginContainer/buttons_control"]
-z_index = 1
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -520.0
-offset_top = -210.0
-offset_right = 520.0
-offset_bottom = -10.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="sleep_button" parent="MarginContainer/control/button_hbox" instance=ExtResource("4_dja7h")]
+unique_name_in_owner = true
+self_modulate = Color(0.678431, 0.439216, 0.686275, 1)
+layout_mode = 2
+button_text = "SLEEP"
+button_icon = ExtResource("6_6ud22")
 
-[node name="hbox" type="HBoxContainer" parent="MarginContainer/buttons_control/button_panel"]
+[node name="panel" type="PanelContainer" parent="MarginContainer/control"]
+z_index = 1
+layout_mode = 2
+offset_top = 1080.0
+offset_right = 656.0
+offset_bottom = 1208.0
+
+[node name="hbox" type="HBoxContainer" parent="MarginContainer/control/panel"]
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_constants/separation = 20
+theme_override_constants/separation = 24
 alignment = 1
 
-[node name="options_button" parent="MarginContainer/buttons_control/button_panel/hbox" instance=ExtResource("4_e1ebx")]
-unique_name_in_owner = true
+[node name="home_button" parent="MarginContainer/control/panel/hbox" instance=ExtResource("4_e1ebx")]
 layout_mode = 2
-button_text = "OPTIONS"
-button_icon = ExtResource("10_nro1y")
+button_text = "HOME"
+button_icon = ExtResource("5_g1ela")
 
-[node name="journal_button" parent="MarginContainer/buttons_control/button_panel/hbox" instance=ExtResource("4_e1ebx")]
-unique_name_in_owner = true
+[node name="journal_button" parent="MarginContainer/control/panel/hbox" instance=ExtResource("4_e1ebx")]
 layout_mode = 2
 button_text = "JOURNAL"
 button_icon = ExtResource("6_mqjsf")
 
-[node name="plus_button" parent="MarginContainer/buttons_control/button_panel/hbox" instance=ExtResource("7_mqjsf")]
-unique_name_in_owner = true
+[node name="plus_button" parent="MarginContainer/control/panel/hbox" instance=ExtResource("7_mqjsf")]
+custom_minimum_size = Vector2(144, 80)
 layout_mode = 2
 
-[node name="inventory_button" parent="MarginContainer/buttons_control/button_panel/hbox" instance=ExtResource("4_e1ebx")]
-unique_name_in_owner = true
+[node name="inventory_button" parent="MarginContainer/control/panel/hbox" instance=ExtResource("4_e1ebx")]
 layout_mode = 2
 button_text = "INVENTORY"
 button_icon = ExtResource("8_yswpu")
 
-[node name="shop_button" parent="MarginContainer/buttons_control/button_panel/hbox" instance=ExtResource("4_e1ebx")]
-unique_name_in_owner = true
+[node name="shop_button" parent="MarginContainer/control/panel/hbox" instance=ExtResource("4_e1ebx")]
 layout_mode = 2
 button_text = "SHOP"
 button_icon = ExtResource("7_nro1y")

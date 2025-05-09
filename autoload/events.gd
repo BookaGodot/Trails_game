@@ -15,5 +15,5 @@ func _ready() -> void:
 
 func set_money(amount: int):
 	money_updated.emit()
-	SaveSystem.set_var("money", money + amount)
+	SaveSystem.set_var("money", money)
 	SaveSystem.save()
