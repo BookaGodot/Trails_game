@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bvkwotn5se73f"
 path.s3tc="res://.godot/imported/hungry.png-d61ebc6118e561896e42bfde97bf41e8.s3tc.ctex"
+path.etc2="res://.godot/imported/hungry.png-d61ebc6118e561896e42bfde97bf41e8.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://elements/pet/texture/hungry.png"
-dest_files=["res://.godot/imported/hungry.png-d61ebc6118e561896e42bfde97bf41e8.s3tc.ctex"]
+dest_files=["res://.godot/imported/hungry.png-d61ebc6118e561896e42bfde97bf41e8.s3tc.ctex", "res://.godot/imported/hungry.png-d61ebc6118e561896e42bfde97bf41e8.etc2.ctex"]
 
 [params]
 
