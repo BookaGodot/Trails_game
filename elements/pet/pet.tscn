@@ -1,6 +1,7 @@
-[gd_scene load_steps=35 format=3 uid="uid://by0bh4cw06vy4"]
+[gd_scene load_steps=44 format=3 uid="uid://by0bh4cw06vy4"]
 
 [ext_resource type="Script" uid="uid://yy56ygcbsmwj" path="res://elements/pet/pet.gd" id="1_w8ihv"]
+[ext_resource type="Script" uid="uid://basiasfykq8cr" path="res://elements/pet/phrases.gd" id="2_2dlwg"]
 [ext_resource type="Texture2D" uid="uid://iyimeitn4moi" path="res://elements/pet/texture/idle.png" id="2_28ajw"]
 [ext_resource type="Script" uid="uid://d3xbmv1de75rl" path="res://elements/pet/animation_manager.gd" id="3_12jhs"]
 [ext_resource type="Script" uid="uid://d3fvh2l0iwlru" path="res://elements/pet/state.gd" id="3_iukgt"]
@@ -9,12 +10,20 @@
 [ext_resource type="Texture2D" uid="uid://rhbds55jbyrd" path="res://elements/pet/texture/eating.png" id="5_2scak"]
 [ext_resource type="Texture2D" uid="uid://vywx8m4k2mut" path="res://elements/pet/texture/taking_bath.png" id="5_y2e4w"]
 [ext_resource type="Texture2D" uid="uid://4arldt4t6gf8" path="res://elements/pet/texture/angry.png" id="6_j6r3l"]
+[ext_resource type="Script" uid="uid://dnoioakmyejjy" path="res://elements/pet/temperament.gd" id="6_mo4l1"]
 [ext_resource type="Texture2D" uid="uid://iaanbdbw5nea" path="res://elements/pet/texture/play1.png" id="8_rf5dc"]
 [ext_resource type="Texture2D" uid="uid://diq2fuwigiy57" path="res://elements/pet/texture/play2.png" id="9_pgk2j"]
+[ext_resource type="FontFile" uid="uid://c0brss2g2tf7g" path="res://elements/GUI/system/Geologica-VariableFont_CRSV,SHRP,slnt,wght.ttf" id="9_quvjb"]
 [ext_resource type="Texture2D" uid="uid://cpf3dq31gijt" path="res://elements/pet/texture/alarm.png" id="9_y2e4w"]
 [ext_resource type="Texture2D" uid="uid://dk5wuvmpvk6n" path="res://elements/pet/texture/play3.png" id="10_0n8r5"]
 [ext_resource type="Texture2D" uid="uid://bvkwotn5se73f" path="res://elements/pet/texture/hungry.png" id="10_kw8ss"]
 [ext_resource type="Texture2D" uid="uid://dxfmfc5j8lpxt" path="res://elements/pet/texture/crying.png" id="11_e3ja3"]
+[ext_resource type="Texture2D" uid="uid://bc8lfcnevio2l" path="res://elements/pet/texture/sad.png" id="14_0n8r5"]
+[ext_resource type="Texture2D" uid="uid://djb0bn0k3d2aa" path="res://elements/pet/texture/happy.png" id="15_klv8h"]
+[ext_resource type="Texture2D" uid="uid://bupkp0828b6g2" path="res://elements/pet/texture/sleeping.png" id="16_1e2rg"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2dlwg"]
+size = Vector2(256, 128)
 
 [sub_resource type="Animation" id="Animation_2scak"]
 length = 0.001
@@ -425,7 +434,49 @@ tracks/2/keys = {
 "values": [58]
 }
 
+[sub_resource type="Animation" id="Animation_mo4l1"]
+resource_name = "neutral"
+length = 1.18
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("15_klv8h")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [59]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.18),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 39]
+}
+
 [sub_resource type="Animation" id="Animation_y2e4w"]
+resource_name = "neutral"
 length = 0.82
 loop_mode = 2
 tracks/0/type = "value"
@@ -465,19 +516,140 @@ tracks/2/keys = {
 "values": [0, 39]
 }
 
+[sub_resource type="Animation" id="Animation_0n8r5"]
+resource_name = "sad"
+length = 0.6
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("14_0n8r5")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [30]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 29]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kw8ss"]
 _data = {
 &"alarmed": SubResource("Animation_wc1ka"),
 &"angry": SubResource("Animation_kw8ss"),
-&"neutral": SubResource("Animation_y2e4w")
+&"happy": SubResource("Animation_mo4l1"),
+&"neutral": SubResource("Animation_y2e4w"),
+&"sad": SubResource("Animation_0n8r5")
 }
 
 [sub_resource type="Animation" id="Animation_e3ja3"]
+length = 0.6
 loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [42]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("16_1e2rg")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 30]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wc1ka"]
 _data = {
 &"sleep": SubResource("Animation_e3ja3")
+}
+
+[sub_resource type="Animation" id="Animation_rf5dc"]
+resource_name = "sad"
+length = 0.52
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("11_e3ja3")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [26]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.52),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 25]
 }
 
 [sub_resource type="Animation" id="Animation_pgk2j"]
@@ -573,52 +745,11 @@ tracks/2/keys = {
 "values": [0, 29]
 }
 
-[sub_resource type="Animation" id="Animation_rf5dc"]
-resource_name = "sad"
-length = 0.52
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("11_e3ja3")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [26]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.52),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0, 25]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0n8r5"]
 _data = {
+&"crying": SubResource("Animation_rf5dc"),
 &"dirty": SubResource("Animation_pgk2j"),
-&"hungry": SubResource("Animation_cu74m"),
-&"sad": SubResource("Animation_rf5dc")
+&"hungry": SubResource("Animation_cu74m")
 }
 
 [node name="Pet" type="Control"]
@@ -654,14 +785,15 @@ texture = ExtResource("2_28ajw")
 hframes = 41
 
 [node name="DirtEffect" type="Sprite2D" parent="Sprite2D"]
+unique_name_in_owner = true
 visible = false
 self_modulate = Color(1, 1, 1, 0.603922)
 position = Vector2(0, 8)
 texture = ExtResource("3_pgk2j")
 
 [node name="BubblesEffect" type="Sprite2D" parent="."]
-position = Vector2(534, 563)
-scale = Vector2(1.44075, 1.5)
+unique_name_in_owner = true
+position = Vector2(376, 392)
 texture = ExtResource("5_y2e4w")
 hframes = 42
 
@@ -669,8 +801,19 @@ hframes = 42
 unique_name_in_owner = true
 script = ExtResource("3_12jhs")
 action_animations = Array[StringName]([&"pet", &"feed", &"play", &"clean"])
-state_animations = Array[StringName]([&"hungry", &"sad", &"dirty"])
-idle_animations = Array[StringName]([&"neutral", &"alarmed", &"angry"])
+state_animations = Array[StringName]([&"hungry", &"crying", &"dirty"])
+random_animations = Array[StringName]([&"sleep"])
+idle_animations = Array[StringName]([&"neutral", &"alarmed", &"angry", &"happy", &"sad"])
+
+[node name="RandomAnimationTimer" type="Timer" parent="AnimationManager"]
+unique_name_in_owner = true
+wait_time = 120.0
+one_shot = true
+autostart = true
+
+[node name="Temperament" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("6_mo4l1")
 
 [node name="State" type="Node" parent="."]
 unique_name_in_owner = true
@@ -684,6 +827,39 @@ autostart = true
 [node name="StateDecayTimer" type="Timer" parent="State"]
 autostart = true
 
+[node name="Pharases" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 288.0
+offset_top = 176.0
+offset_bottom = -887.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("9_quvjb")
+theme_override_font_sizes/font_size = 32
+text = "ъуъ"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+script = ExtResource("2_2dlwg")
+
+[node name="TextureRect" type="TextureRect" parent="Pharases"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_2dlwg")
+
+[node name="RandomPhraseTimer" type="Timer" parent="Pharases"]
+unique_name_in_owner = true
+wait_time = 30.0
+autostart = true
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
 libraries = {
@@ -693,7 +869,6 @@ libraries = {
 &"random": SubResource("AnimationLibrary_wc1ka"),
 &"state": SubResource("AnimationLibrary_0n8r5")
 }
-autoplay = "action/play"
 speed_scale = 0.5
 
 [connection signal="pressed" from="Button" to="." method="_on_click"]

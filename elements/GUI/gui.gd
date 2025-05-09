@@ -20,9 +20,7 @@ extends CanvasLayer
 var shop_opened : bool = false
 
 func _ready() -> void:
-	shop_control.visible = false
-	
-	care_bar.value = pet.state.care
+	care_bar.value = pet.care
 	Events.care_changed.connect(update_care)
 	Events.money_updated.connect(money_update)
 	feed_button.pressed.connect(on_feed_pressed)
