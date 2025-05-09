@@ -520,6 +520,7 @@ _data = {
 &"sleep": SubResource("Animation_e3ja3")
 }
 
+<<<<<<< HEAD
 [sub_resource type="Animation" id="Animation_cu74m"]
 =======
 [sub_resource type="Animation" id="Animation_0n8r5"]
@@ -714,6 +715,8 @@ tracks/3/keys = {
 "values": [true]
 }
 
+=======
+>>>>>>> parent of cefc7c6 (shop buy implemented, changed window size)
 [sub_resource type="Animation" id="Animation_cu74m"]
 length = 0.6
 loop_mode = 1
@@ -851,6 +854,9 @@ tracks/3/keys = {
 "values": [true]
 }
 
+<<<<<<< HEAD
+>>>>>>> parent of cefc7c6 (shop buy implemented, changed window size)
+=======
 >>>>>>> parent of cefc7c6 (shop buy implemented, changed window size)
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0n8r5"]
 _data = {
@@ -900,12 +906,16 @@ texture = ExtResource("3_pgk2j")
 [node name="BubblesEffect" type="Sprite2D" parent="."]
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 position = Vector2(534, 563)
 scale = Vector2(1.44075, 1.5)
 =======
 unique_name_in_owner = true
 position = Vector2(376, 392)
 >>>>>>> Anton
+=======
+position = Vector2(376, 392)
+>>>>>>> parent of cefc7c6 (shop buy implemented, changed window size)
 =======
 position = Vector2(376, 392)
 >>>>>>> parent of cefc7c6 (shop buy implemented, changed window size)

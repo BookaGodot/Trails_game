@@ -13,8 +13,11 @@ extends CanvasLayer
 func _ready() -> void:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	shop_control.visible = false
 	
+=======
+>>>>>>> parent of cefc7c6 (shop buy implemented, changed window size)
 =======
 >>>>>>> parent of cefc7c6 (shop buy implemented, changed window size)
 	care_bar.value = pet.state.care
