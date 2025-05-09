@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c3r10ffu23f51"
 path.s3tc="res://.godot/imported/loving.png-8a55f80f2bfa63607796e53eda2c6c2d.s3tc.ctex"
-path.etc2="res://.godot/imported/loving.png-8a55f80f2bfa63607796e53eda2c6c2d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://elements/pet/texture/loving.png"
-dest_files=["res://.godot/imported/loving.png-8a55f80f2bfa63607796e53eda2c6c2d.s3tc.ctex", "res://.godot/imported/loving.png-8a55f80f2bfa63607796e53eda2c6c2d.etc2.ctex"]
+dest_files=["res://.godot/imported/loving.png-8a55f80f2bfa63607796e53eda2c6c2d.s3tc.ctex"]
 
 [params]
 
