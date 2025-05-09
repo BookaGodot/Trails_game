@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ddwssa4p8i2ke" path="res://elements/GUI/textures/Feed icon.png" id="3_vffau"]
 
 [node name="big_button" type="Button"]
-custom_minimum_size = Vector2(144, 144)
+custom_minimum_size = Vector2(256, 256)
 offset_right = 128.0
 offset_bottom = 128.0
 script = ExtResource("1_4tsdw")
@@ -18,10 +18,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 30.0
+offset_left = 50.0
 offset_top = 18.0
-offset_right = -34.0
-offset_bottom = -46.0
+offset_right = -46.0
+offset_bottom = -78.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_vffau")
@@ -29,11 +29,12 @@ expand_mode = 4
 
 [node name="label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 98.0
-offset_right = 130.0
-offset_bottom = 133.0
-theme_override_font_sizes/font_size = 28
+offset_top = 173.0
+offset_right = 256.0
+offset_bottom = 234.0
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 42
 text = "Тестовая"
 horizontal_alignment = 1
 vertical_alignment = 1
